@@ -1,10 +1,16 @@
 #!/usr/local/bin/python
 
-import glob, sys, getopt, os
+"A naive script to convert MP4 files to MP3"
+
+import glob
+import sys
+import getopt
+import os
 from moviepy.editor import AudioFileClip
 
 
 def main(argv):
+    "The program's entry point"
     input_files = []
     output_directory = ""
     opts, _ = getopt.getopt(argv, "hi:o:", ["ifile=", "odir="])
