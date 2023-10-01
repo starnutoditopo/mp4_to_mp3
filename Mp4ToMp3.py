@@ -3,6 +3,7 @@
 import glob, sys, getopt, os
 from moviepy.editor import AudioFileClip
 
+
 def main(argv):
     input_files = []
     output_directory = ""
@@ -22,11 +23,12 @@ def main(argv):
         _, file_name = os.path.split(input_file)
 
         base_name = os.path.splitext(file_name)[0]
-        new_file_name = base_name + '.mp3'        
-        output_file = os.path.join(output_directory, new_file_name)        
+        new_file_name = base_name + ".mp3"
+        output_file = os.path.join(output_directory, new_file_name)
         print(f"{output_file}")
         with AudioFileClip(input_file) as clip:
             clip.write_audiofile(output_file)
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])
